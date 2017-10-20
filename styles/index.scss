@@ -1,7 +1,38 @@
 .application {
-	background-color: #666;
-	border-radius: 1em;
-	border: 1px solid #666;
-	margin: 2em;
-	padding: 1em;
+	position: absolute;
+	background-color: #EEE;
+	border: solid 1px black;
+	margin : 0;
+	padding : 0;
+	width: 100%;
+	height: 100%;
+}
+
+.dataContainer {
+	position: absolute;
+	left:0;
+	top: 0;
+	width           : 20%;
+	height          : 50%;
+	background-color: #ECE;
+}
+
+.configContainer {
+	left:0;
+	top: 50%;
+	position: absolute;
+	width           : 20%;
+	height          : 50%;
+	background-color: #966FD6;
+}
+
+.canvasContainer {
+	float:right;
+	width           : 80%;
+	height          : 100%;
+	background-color: #FFEECC;
+}
+
+.warning {
+	color: red;
 }

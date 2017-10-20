@@ -1,62 +1,84 @@
 import React from 'react';
+import ReactJson from 'react-json-view'
 
+import {InputField} from './Components/InputField.jsx';
+import {Canvas} from './Components/Canvas.jsx';
 
-
-// Import the scss
 import '../styles/index.scss';
-
-
-class TextInput extends React.Component{
-	
-	constructor(props){
-		super(props);
-	}
-	
-	render(){
-
-		return(
-			<div>
-				<button onClick={ () => { this.props.onChange('werwe')} } >
-					Anything
-				</button>
-				
-			</div>
-		)
-	
-	}
-
-}
-/*
-	Main application
-*/
 
 export default class Application extends React.Component {
 
 	constructor(props){
 		super(props);
-		this.update = this.update.bind(this)
+		this.state = { 
+		    data  : 'Data input...',
+		    config: 'Config input...'
+		};
+		this.updateData = this.updateData.bind(this);
+		this.updateConfig = this.updateConfig.bind(this);
 	}
 
-
-	update(dataInput) {
-		console.log('Parent :' + dataInput)
-	    this.setState({ dataInput });
+	updateData(dataInput) {
+		console.log("Data" + dataInput)
+		var dat,
+			validData
+		try {
+			dat= JSON.parse(dataInput)
+			validData = true
+		} catch (me) {
+			validData = false
+		}
+		this.setState({
+			data : dataInput,
+			validData
+		});
 	}
 
-	/*
-		The main part of the application consists only of a project folder and 
-		the associatied different types of methods for it.
-	*/
+	updateConfig(configInput) {
+
+		var configuration,
+			validConfig
+		try {
+			configuration= JSON.parse(configInput)
+			validConfig = true
+		} catch (me) {
+			validConfig = false
+		}
+		this.setState({
+			config : configInput,
+			validConfig
+		});
+	}
+
 	render() {
-
 		return (
 			<div className = 'application'>
-				<h1>A react starter kity hot load</h1>
-				<TextInput onChange = {this.update}/>
+		
+				<div className = 'dataContainer'>
+					<InputField 
+						className = {"dataField"} 
+						onChange  = {this.updateData} 
+						value     = {this.state.data}
+					/>
+				</div>
+
+				<div className = 'configContainer'>
+					<InputField 
+						onChange = { this.updateConfig } 
+						value={this.state.config}
+					/>
+				</div>
+
+				<div className = 'canvasContainer'>
+					{ this.state.validConfig && this.state.validData ? 
+						<Canvas data={ this.state.data } config={ this.state.config }/>	: 
+						this.state.validData? 
+							<div className = 'warning'><b>CONFIG JSON BAD!</b></div> : 
+							<div className = 'warning'><b>DATA JSON BAD!  </b></div> 
+					}
+					</div>
 			</div>
 		)
-
-
 	}
 
 }
