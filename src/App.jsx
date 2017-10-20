@@ -14,8 +14,6 @@ class TextInput extends React.Component{
 	
 	render(){
 
-		// if(this.props.onChange) this.props.onChange('super')
-
 		return(
 			<div>
 				<button onClick={ () => { this.props.onChange('werwe')} } >
@@ -31,6 +29,7 @@ class TextInput extends React.Component{
 /*
 	Main application
 */
+
 export default class Application extends React.Component {
 
 	constructor(props){
