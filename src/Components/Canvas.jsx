@@ -1,4 +1,7 @@
 import React from 'react';
+import * as d3 from 'd3';
+
+console.log(d3)
 
 export class Canvas extends React.Component {
   constructor(props) {
@@ -6,6 +9,9 @@ export class Canvas extends React.Component {
   }
 
   render() {
+
+
+
     return (
       <svg id={"svg"} className={"D3Canvas"} >
             

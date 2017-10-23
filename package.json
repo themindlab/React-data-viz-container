@@ -19,6 +19,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "codemirror": "^5.30.0",
+    "d3": "^4.11.0",
     "fetch": "^1.1.0",
     "node-sass": "^4.3.0",
     "react": "^16.0.0",

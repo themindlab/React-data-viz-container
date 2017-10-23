@@ -5,9 +5,8 @@ export class JsonField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      show: true
     };
-
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -18,7 +17,10 @@ export class JsonField extends React.Component {
 
   render() {
     return (
-      <textarea value={this.state.value} onChange={this.handleChange} />
+      <div>
+        <button>Show Data</button><br/>
+        <textarea value={this.state.value} onChange={this.handleChange} />
+      </div>
     );
   }
 

@@ -4,7 +4,7 @@ export class InputField extends React.Component {
   
   constructor(props) {
     super(props);
-
+    this.state =  {value : props.value}
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -15,7 +15,9 @@ export class InputField extends React.Component {
 
   render() {
     return (
-      <textarea value={this.props.value} onChange={this.handleChange} rows={20}/>
+      <div>
+        <textarea value={this.state.value} onChange={this.handleChange} rows={20}/> 
+      </div>
     );
   }
 
