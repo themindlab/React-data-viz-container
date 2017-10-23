@@ -16,7 +16,7 @@ export class InputField extends React.Component {
   render() {
     return (
       <div>
-        <textarea value={this.state.value} onChange={this.handleChange} rows={20}/> 
+        <textarea value={this.state.value} onChange={this.handleChange} rows={15}/> 
       </div>
     );
   }

@@ -102,20 +102,8 @@ export class DataVis extends React.Component {
 					<button onClick={this.getBoxDimensions}>Get SVG Dimensions</button>
 				</div>
 
-				<div className = 'D3Field'>
-					
-					<BarTest data={this.state.data} configuration={this.state.config} size = {[250,250]}/>
-					{/* 
-
-					===== STANDARD SVG =====
-					<Canvas />
-
-					=== FOR TESTING JSON ===
-					<h4>Data</h4>
-					<pre>{ JSON.stringify(this.state.data) }</pre>
-					<h4>Config</h4>
-					<pre>{ JSON.stringify(this.state.config) }</pre>
-					*/}
+				<div className = 'D3Field'>			
+					<BarTest data={this.state.data} configuration={this.state.config} size = {[document.getElementById('svg').clientWidth - 20,document.getElementById('svg').clientHeight-20]}/>
 				</div>
 
 			</div>

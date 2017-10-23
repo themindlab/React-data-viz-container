@@ -1,36 +1,40 @@
 .application {
-	position: absolute;
-	background-color: #EEE;
-	border: solid 1px black;
-	margin : 0;
-	padding : 0;
-	width: 100%;
-	height: 100%;
+	position         : absolute;
+	background-color : #EEE;
+	border           : solid 1px black;
+	margin           : 0;
+	padding          : 0;
+	width            : 100%;
+	height           : 100%;
 }
 
 .dataContainer {
-	position: absolute;
-	left:0;
-	top: 0;
-	width           : 20%;
-	height          : 50%;
-	background-color: #ECE;
+	position         : absolute;
+	left             :0;
+	top              : 0;
+	width            : 20%;
+	height           : 50%;
+	background-color : #7EC0EE;
+	border           : solid white 2px;
+	border-radius    : 25px;
 }
 
 .configContainer {
-	left:0;
-	top: 50%;
-	position: absolute;
-	width           : 20%;
-	height          : 50%;
-	background-color: #966FD6;
+	left             : 0;
+	top              : 50%;
+	position         : absolute;
+	width            : 20%;
+	height           : 50%;
+	background-color : #7EC0EE;
+	border           : solid white 2px;
+	border-radius    : 25px;
 }
 
 .canvasContainer {
-	float:right;
-	width           : 80%;
-	height          : 100%;
-	background-color: #FFEECC;
+	float            : right;
+	width            : 80%;
+	height           : 100%;
+	background-color : #FFEECC;
 }
 
 .warning {
@@ -42,13 +46,36 @@
 	height           : 100%;
 	top              : 0;
 	left             : 20%;
-	background-color : #FFEECC;
+	background-color : #EEE;
 	position         : absolute;
 }
 
 .D3Canvas {
-			width            : 80%;
-			height           : 100%;
-			top              : 0;
-			position         : absolute;
-		}
+	width            : 80%;
+	height           : 100%;
+	top              : 0;
+	position         : absolute;
+}
+
+.dataField {
+	display  : block;
+    overflow : hidden;
+}
+
+button {
+    background-color : #EEE;
+    border           : none;
+    color            : #7EC0EE;
+    text-align       : center;
+    padding          : 5px;
+    transition       : all 0.5s;
+    width            : 100px;
+    cursor           : pointer;
+    margin           : 5px;
+    border-radius    : 20px;
+}
+
+button:hover {
+	background-color : #7EC0EE;
+    color            : #EEE;
+}
